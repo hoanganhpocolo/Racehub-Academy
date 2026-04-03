@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Racehub Driver's Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="scratch-cursor" id="scratchCursor"></div>
+
+<!-- Nav -->
+<nav id="navbar">
+  <a href="#" class="nav-logo"><img src="assets/images/Logo.svg" alt="Racehub"></a>
+  <div class="nav-links" id="navLinks">
+    <a href="#programs">Programs</a>
+    <a href="#pathway">Pathway</a>
+    <a href="#team">Coaches</a>
+    <a href="#approach">Training</a>
+    <a href="#gear">Gear</a>
+    <a href="#apply" class="nav-apply">Apply Now</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-label reveal">Racehub Driver's Academy</div>
+      <h1 class="reveal rd1">From First Laps<br>To The Starting</h1>
+      <div class="hero-actions reveal rd2">
+        <a href="#apply" class="btn-red">Apply For The Academy <span class="arrow">&rarr;</span></a>
+        <a href="#programs" class="btn-ghost">View Programs</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img src="assets/images/hero-bg.png" alt="Kart Racing">
+    <div class="hero-image-fade"></div>
+  </div>
+</section>
+
+<!-- Why Join -->
+<section class="why-section" id="why">
+  <div class="container">
+    <div class="sec-label reveal">Why Join <span class="sec-counter">02</span></div>
+    <div class="why-heading">
+      <h2 class="why-left">Not Everyone</h2>
+      <h2 class="why-right"><span class="red">Belongs Here</span></h2>
+    </div>
+    <div class="why-layout">
+      <div class="usp-grid">
+        <div class="usp-card reveal">
+          <img class="usp-icon" src="assets/icons/icon-structured.svg" alt="">
+          <h3>Structured Training</h3>
+          <p>Every session follows a clear plan focused on improvement, not just track time.</p>
+        </div>
+        <div class="usp-card reveal rd1">
+          <img class="usp-icon" src="assets/icons/icon-racecraft.svg" alt="">
+          <h3>Real Racecraft</h3>
+          <p>We teach positioning, decision-making, and race awareness — not just speed.</p>
+        </div>
+        <div class="usp-card reveal rd2">
+          <img class="usp-icon" src="assets/icons/icon-progression.svg" alt="">
+          <h3>Consistent Progression</h3>
+          <p>Drivers build skills step by step through regular, focused training.</p>
+        </div>
+        <div class="usp-card reveal rd3">
+          <img class="usp-icon" src="assets/icons/icon-groups.svg" alt="">
+          <h3>Small Groups</h3>
+          <p>Limited drivers per session to ensure proper coaching and individual feedback.</p>
+        </div>
+        <div class="usp-card reveal rd4">
+          <img class="usp-icon" src="assets/icons/icon-coaching.svg" alt="">
+          <h3>Coaching That Matters</h3>
+          <p>Every run is reviewed. Drivers understand what to fix and how to improve.</p>
+        </div>
+        <div class="usp-card reveal rd5">
+          <img class="usp-icon" src="assets/icons/icon-pathway.svg" alt="">
+          <h3>Race Pathway</h3>
+          <p>Opportunities to progress into regional racing, including the Rotax series.</p>
+        </div>
+      </div>
+      <div class="why-image reveal rd3">
+        <img src="assets/images/why-driver.jpg" alt="Kart Driver">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Programs + Pathway Wrapper -->
+<div class="programs-pathway-wrapper">
+
+<!-- Programs -->
+<section class="programs-section" id="programs">
+  <div class="programs-bg">
+    <div class="programs-bg-dark"></div>
+    <div class="programs-bg-overlay"></div>
+  </div>
+  <div class="programs-spotlight"></div>
+  <div class="container">
+    <div class="programs-header">
+      <div class="sec-label reveal">Programs <span class="sec-counter">03</span></div>
+      <h2 class="reveal rd1">Driver Development<br><span class="red">Programs</span></h2>
+      <p class="reveal rd2">Designed to build drivers step by step, from foundational skills to race-ready performance.</p>
+    </div>
+    <div class="program-cards">
+      <!-- Monthly -->
+      <div class="program-card featured reveal">
+        <div class="program-card-head">
+          <h3><span class="red">Monthly Driver</span><br>Program</h3>
+          <p class="desc">3 training days per month on weekends. Training at TGC Speedway or Dai Nam. Structured progression through Cadet, Junior, and Adult levels. Small groups with a maximum 6:1 driver to coach ratio.</p>
+        </div>
+        <div class="program-card-body">
+          <ul class="program-list">
+            <li>Track sessions (1&ndash;2 hours per day)</li>
+            <li>Coaching: lines, braking, racecraft</li>
+            <li>On-board video review</li>
+            <li>Data analysis sessions</li>
+            <li>Simulator training (1 hour/day &mdash; remote with Blayke Philips)</li>
+          </ul>
+        </div>
+        <div class="program-card-foot">
+          <div class="program-price-block">
+            <div class="program-price">15,000,000 <small>VND</small></div>
+            <div class="program-unit">From / per month</div>
+          </div>
+          <a href="#apply" class="btn-red btn-sm">Apply Now <span class="arrow">&rarr;</span></a>
+        </div>
+        <p class="program-note">Does not include race entry fees, travel, or crash damage.</p>
+      </div>
+      <!-- Daily -->
+      <div class="program-card reveal rd2">
+        <div class="program-card-head">
+          <h3><span class="red">Single Day</span><br>Training</h3>
+          <p class="desc">For new drivers or those who want to experience structured coaching before committing to the monthly program.</p>
+        </div>
+        <div class="program-card-body">
+          <ul class="program-list">
+            <li>Multiple track sessions</li>
+            <li>Professional coaching &amp; feedback</li>
+            <li>Basic data &amp; video review</li>
+            <li>Introduction to structured training</li>
+          </ul>
+        </div>
+        <div class="program-card-foot">
+          <div class="program-price-block">
+            <div class="program-price">7,000,000 <small>VND</small></div>
+            <div class="program-unit">Per day</div>
+          </div>
+          <a href="#apply" class="btn-outline btn-sm">Book a Day</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pathway -->
+<section class="pathway-section" id="pathway">
+  <img src="assets/images/union-small.png" alt="" class="pathway-union-small">
+  <div class="pathway-reveal-bg" id="kartReveal">
+    <img src="assets/images/Sketch.png" alt="" class="pathway-spacer">
+    <img src="assets/images/Real.png" alt="" class="real-base">
+    <canvas id="scratchCanvas"></canvas>
+  </div>
+  <div class="container">
+    <div class="pathway-layout">
+      <div class="pathway-text">
+        <div class="sec-label reveal">Racing Pathway</div>
+        <h2 class="reveal rd1">From Training<br>To <span class="red">Racing</span></h2>
+      </div>
+      <div class="pathway-items">
+        <div class="pathway-item reveal">
+          <div class="pathway-item-icon"><img src="assets/icons/icon-pathway-1.svg" alt=""></div>
+          <p>Train and compete at regional circuits such as Bira and Sepang</p>
+        </div>
+        <div class="pathway-item reveal rd1">
+          <div class="pathway-item-icon"><img src="assets/icons/icon-pathway-2.svg" alt=""></div>
+          <p>Participate in Rotax-supported racing series</p>
+        </div>
+        <div class="pathway-item reveal rd2">
+          <div class="pathway-item-icon"><img src="assets/icons/icon-pathway-3.svg" alt=""></div>
+          <p>Receive race coaching, preparation, and trackside support</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /programs-pathway-wrapper -->
+
+<div class="stripe"></div>
+
+<!-- Karts -->
+<section class="karts-section" id="karts">
+  <div class="container">
+    <div class="karts-header">
+      <div>
+        <div class="sec-label reveal">Equipment <span class="sec-counter">05</span></div>
+        <h2 class="reveal rd1">Karts &amp;<br><span class="red">Equipment</span></h2>
+      </div>
+      <p class="reveal rd2">We train on proper race karts, not rental karts. Race-level performance, consistency, and control.</p>
+    </div>
+    <div class="karts-grid">
+      <div class="kart-card reveal">
+        <div class="kart-card-img"><img src="assets/images/kart-cadet.jpg" alt="Sodi Mini"></div>
+        <div class="kart-card-info">
+          <div class="kart-category">Cadet</div>
+          <h3>Sodi Mini</h3>
+          <p>Entry-level race kart for young cadets developing foundational driving skills.</p>
+        </div>
+      </div>
+      <div class="kart-card reveal rd1">
+        <div class="kart-card-img"><img src="assets/images/kart-junior.jpg" alt="Sodi Junior"></div>
+        <div class="kart-card-info">
+          <div class="kart-category">Junior Drivers</div>
+          <h3>Sodi Junior</h3>
+          <p>Mid-level race kart for junior drivers progressing through the academy.</p>
+        </div>
+      </div>
+      <div class="kart-card reveal rd2">
+        <div class="kart-card-img"><img src="assets/images/kart-senior.jpg" alt="Sodi Senior"></div>
+        <div class="kart-card-info">
+          <div class="kart-category">Senior</div>
+          <h3>Sodi Senior</h3>
+          <p>Full-performance race kart for adult drivers training at competitive levels.</p>
+        </div>
+      </div>
+    </div>
+    <div class="kart-engine reveal rd3">
+      <span class="powered">Powered by</span>
+      <span class="engine-name">ROTAX</span>
+      <div class="focus-items">
+        <span>Race Performance</span>
+        <span>Consistency</span>
+        <span>Mechanical Understanding</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team -->
+<section class="team-section" id="team">
+  <div class="container">
+    <div class="team-header">
+      <div>
+        <div class="sec-label reveal">Coaching Team</div>
+        <h2 class="reveal rd1">Driver Development<br><span class="red">Team</span></h2>
+      </div>
+      <p class="reveal rd2">Coaches who focus on racecraft, discipline, and preparing drivers for competitive racing.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card reveal">
+        <div class="team-card-img"><img src="assets/images/coach 1.jpg" alt="David Guibal"></div>
+        <div class="team-card-info">
+          <div class="team-role">Head Coach</div>
+          <h3>David Guibal</h3>
+          <p>Former competitive karter with extensive coaching experience. Focused on racecraft, lines, and driver development.</p>
+        </div>
+      </div>
+      <div class="team-card reveal rd1">
+        <div class="team-card-img"><img src="assets/images/coach 2.jpg" alt="Blayke Philips"></div>
+        <div class="team-card-info">
+          <div class="team-role">Simulator Coach</div>
+          <h3>Blayke Philips</h3>
+          <p>Remote simulator training to reinforce race scenarios, consistency, and decision-making.</p>
+        </div>
+      </div>
+      <div class="team-card reveal rd2">
+        <div class="team-card-img"><img src="assets/images/coach 3.jpg" alt="Nguyen Bao Hoang"></div>
+        <div class="team-card-info">
+          <div class="team-role">Assistant Coach</div>
+          <h3>Nguyen Bao Hoang</h3>
+          <p>Supports on-track sessions, driver management, and progression tracking.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Drivers -->
+<section class="drivers-section">
+  <div class="container">
+    <div class="sec-label reveal">Our Drivers</div>
+    <div class="driver-card reveal rd1">
+      <div class="driver-avatar"><span>MJ</span></div>
+      <div class="driver-info">
+        <h3>Maxie Jumar</h3>
+        <span class="tag">Academy Driver</span>
+        <p>Part of the first group of young drivers progressing through the program.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Approach -->
+<section class="approach-section" id="approach">
+  <div class="container">
+    <div class="approach-header">
+      <div class="sec-label reveal">Training Approach</div>
+      <h2 class="reveal rd1">Structured<br><span class="red">Sessions</span></h2>
+      <p class="reveal rd2">Delivered on real tracks, with a clear focus on progression. Each session follows a consistent structure designed to maximise improvement.</p>
+    </div>
+    <div class="approach-steps">
+      <div class="approach-step reveal">
+        <h3>Briefing</h3>
+        <p>Track overview and clear objectives for the session.</p>
+      </div>
+      <div class="approach-step reveal rd1">
+        <h3>Track Time</h3>
+        <p>Controlled runs with focused drills &mdash; lines, braking, exits.</p>
+      </div>
+      <div class="approach-step reveal rd2">
+        <h3>Review</h3>
+        <p>Video and data breakdown with individual feedback.</p>
+      </div>
+      <div class="approach-step reveal rd3">
+        <h3>Repeat</h3>
+        <p>Apply corrections immediately and build consistency.</p>
+      </div>
+    </div>
+    <div class="approach-locations reveal">
+      <span>Training at</span>
+      <strong>TGC Speedway</strong>
+      <span>&amp;</span>
+      <strong>Dai Nam Racetrack</strong>
+    </div>
+    <p class="approach-quote reveal rd1">"Drivers don't improve by turning more laps &mdash; they improve by understanding them."</p>
+  </div>
+</section>
+
+<div class="stripe"></div>
+
+<!-- Gear -->
+<section class="gear-section" id="gear">
+  <div class="container">
+    <div class="gear-header">
+      <div class="sec-label reveal">Required Gear</div>
+      <h2 class="reveal rd1">Karting Is A<br><span class="red">Motorsport</span></h2>
+      <p class="reveal rd2">Proper gear is mandatory. Safety is non-negotiable.</p>
+    </div>
+    <div class="gear-grid">
+      <div class="gear-item reveal"><div class="gear-dot"></div><span>Full-Face Helmet</span></div>
+      <div class="gear-item reveal rd1"><div class="gear-dot"></div><span>Racing Suit</span></div>
+      <div class="gear-item reveal rd2"><div class="gear-dot"></div><span>Gloves</span></div>
+      <div class="gear-item reveal rd3"><div class="gear-dot"></div><span>Racing Shoes</span></div>
+      <div class="gear-item reveal rd4"><div class="gear-dot"></div><span>Rib Protector</span></div>
+      <div class="gear-item reveal rd5"><div class="gear-dot"></div><span>Neck Brace</span></div>
+    </div>
+    <div class="gear-note reveal">
+      We can assist with selecting the right gear through Racehub, or provide rental gear for single-day training sessions.
+    </div>
+  </div>
+</section>
+
+<!-- Application Form -->
+<section class="form-section" id="apply">
+  <div class="container">
+    <div class="form-layout">
+      <div class="form-left">
+        <div class="sec-label reveal">Apply</div>
+        <h2 class="reveal rd1">Apply For The<br>Driver's <span class="red">Academy</span></h2>
+        <p class="sub reveal rd2">Tell us a bit about the driver, and we'll get in touch to discuss the next steps.</p>
+        <div class="form-warning reveal rd3">
+          <strong>Important</strong>
+          <p>This is not a casual program. We're looking for drivers who are ready to train consistently and take progression seriously.</p>
+        </div>
+      </div>
+      <div class="form-right reveal rd2">
+        <form id="applicationForm" onsubmit="handleSubmit(event)">
+          <span class="form-group-title">Driver Information</span>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="driverName">Driver Name *</label>
+              <input type="text" id="driverName" name="driverName" required placeholder="Full name">
+            </div>
+            <div class="form-field">
+              <label for="driverAge">Age *</label>
+              <input type="number" id="driverAge" name="driverAge" required placeholder="Age" min="5" max="99">
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="experience">Experience Level *</label>
+            <select id="experience" name="experience" required>
+              <option value="" disabled selected>Select experience level</option>
+              <option value="beginner">Beginner</option>
+              <option value="some">Some Experience</option>
+              <option value="racing">Racing Experience</option>
+            </select>
+          </div>
+
+          <span class="form-group-title">Parent / Contact (if minor)</span>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="parentName">Parent Name</label>
+              <input type="text" id="parentName" name="parentName" placeholder="Parent / Guardian name">
+            </div>
+            <div class="form-field">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" required placeholder="+84">
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required placeholder="email@example.com">
+          </div>
+
+          <span class="form-group-title">Additional Context</span>
+          <div class="form-field">
+            <label for="goals">What are you looking to achieve?</label>
+            <textarea id="goals" name="goals" placeholder="Tell us about your goals..."></textarea>
+          </div>
+          <div class="form-field">
+            <label for="program">Preferred Program *</label>
+            <select id="program" name="program" required>
+              <option value="" disabled selected>Select a program</option>
+              <option value="monthly">Monthly Academy</option>
+              <option value="single-day">Single Day Training</option>
+              <option value="not-sure">Not Sure Yet</option>
+            </select>
+          </div>
+
+          <div class="form-submit">
+            <button type="submit" class="btn-red">Submit Application <span class="arrow">&rarr;</span></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<div class="stripe"></div>
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand"><img src="assets/images/Logo.svg" alt="Racehub"></div>
+      <div class="footer-copy">&copy; 2026 Racehub Driver's Academy. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/kart-reveal.js"></script>
+
+</body>
+</html>
