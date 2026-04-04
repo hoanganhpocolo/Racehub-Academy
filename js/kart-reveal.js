@@ -7,9 +7,9 @@
 
   const ctx = canvas.getContext('2d');
   const sketchImg = new Image();
-  sketchImg.src = 'assets/images/Sketch.png';
+  sketchImg.src = 'assets/images/sketch.png';
   const realImg = new Image();
-  realImg.src = 'assets/images/Real.png';
+  realImg.src = 'assets/images/real.png';
 
   // Temp canvas for compositing reveal (brush mask + real image)
   const tmpCanvas = document.createElement('canvas');
