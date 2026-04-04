@@ -19,7 +19,7 @@
   const realBase = container.querySelector('img.real-base');
   if (realBase) realBase.style.display = 'none';
 
-  const BRUSH_SIZE = 400;
+  const BRUSH_SIZE = window.innerWidth <= 768 ? 200 : 400;
   const TRAIL_MAX = 30;
   const BLOB_COUNT = 5;
   let isInside = false;
