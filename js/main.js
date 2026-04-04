@@ -262,3 +262,30 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
+// Gear preview on hover
+(() => {
+  const previewImg = document.getElementById('gearPreviewImg');
+  if (!previewImg) return;
+  const gearItems = document.querySelectorAll('.gear-item[data-gear]');
+  const defaultSrc = previewImg.src;
+
+  gearItems.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      const gear = item.getAttribute('data-gear');
+      previewImg.style.opacity = '0';
+      setTimeout(() => {
+        previewImg.src = 'assets/images/' + gear;
+        previewImg.style.opacity = '1';
+      }, 150);
+    });
+
+    item.addEventListener('mouseleave', () => {
+      previewImg.style.opacity = '0';
+      setTimeout(() => {
+        previewImg.src = defaultSrc;
+        previewImg.style.opacity = '1';
+      }, 150);
+    });
+  });
+})();
+
