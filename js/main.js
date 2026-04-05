@@ -40,26 +40,44 @@ window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.
   const left = heading.querySelector('.why-left');
   const right = heading.querySelector('.why-right');
 
+  let maxT = 0; // Track highest progress — never go backwards
+  let currentOffset = 100; // Current visual offset (for lerp)
+  let rafId = null;
+
   function update() {
     const rect = heading.getBoundingClientRect();
     const vh = window.innerHeight;
-    // Start animating when heading enters bottom of viewport,
-    // finish when it reaches 30% from top
-    const start = vh;          // heading bottom edge enters viewport
-    const end = vh * 0.3;      // heading reaches upper portion
-    const raw = 1 - (rect.top - end) / (start - end); // 0 → 1
+    const start = vh;
+    const end = vh * 0.3;
+    const raw = 1 - (rect.top - end) / (start - end);
     const t = Math.max(0, Math.min(1, raw));
 
-    // Ease out cubic for smooth deceleration
-    const ease = 1 - Math.pow(1 - t, 3);
+    // Only allow forward progress — prevents Safari bounce-back
+    maxT = Math.max(maxT, t);
 
-    const offset = (1 - ease) * 100; // 100% → 0%
-    left.style.transform = `translateX(${-offset}%)`;
-    right.style.transform = `translateX(${offset}%)`;
+    const ease = 1 - Math.pow(1 - maxT, 3);
+    const targetOffset = (1 - ease) * 100;
+
+    // Lerp for smoother transitions (prevents jitter)
+    currentOffset += (targetOffset - currentOffset) * 0.3;
+
+    left.style.transform = `translateX(${-currentOffset}%)`;
+    right.style.transform = `translateX(${currentOffset}%)`;
+
+    // Keep animating until settled
+    if (Math.abs(currentOffset - targetOffset) > 0.1) {
+      rafId = requestAnimationFrame(update);
+    } else {
+      rafId = null;
+    }
   }
 
-  window.addEventListener('scroll', update, { passive: true });
-  update(); // initial check
+  function onScroll() {
+    if (!rafId) rafId = requestAnimationFrame(update);
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll(); // initial check
 })();
 
 // Finish line checkered pattern with scroll animation

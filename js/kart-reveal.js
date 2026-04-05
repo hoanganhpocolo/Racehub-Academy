@@ -350,35 +350,112 @@
     startLoop();
   });
 
-  // Touch
-  container.addEventListener('touchstart', (e) => {
-    e.preventDefault();
-    isInside = true;
-    const t = e.touches[0];
-    const rect = container.getBoundingClientRect();
-    mouseX = t.clientX - rect.left;
-    mouseY = t.clientY - rect.top;
-    trail = [];
-    startLoop();
-  }, { passive: false });
+  // Mobile: scroll-driven reveal (left to right)
+  const isMobile = window.innerWidth <= 768;
 
-  container.addEventListener('touchmove', (e) => {
-    e.preventDefault();
-    const t = e.touches[0];
-    const rect = container.getBoundingClientRect();
-    mouseX = t.clientX - rect.left;
-    mouseY = t.clientY - rect.top;
-    trail.push({ x: mouseX, y: mouseY });
-    if (trail.length > TRAIL_MAX) trail.shift();
-  }, { passive: false });
+  if (isMobile) {
+    let scrollRevealProgress = 0;
+    let scrollRevealActive = false;
 
-  container.addEventListener('touchend', () => {
-    isInside = false;
-    startLoop();
-  });
+    function drawScrollReveal() {
+      drawSketch();
+      if (!realImg.complete || scrollRevealProgress <= 0) return;
+
+      const p = Math.min(1, scrollRevealProgress);
+      // Ease out cubic for smooth deceleration
+      const ease = 1 - Math.pow(1 - p, 3);
+
+      // Reveal width from left to right
+      const revealW = canvasW * ease;
+
+      // Draw real image clipped to reveal area with soft edge
+      tmpCtx.clearRect(0, 0, canvasW, canvasH);
+      tmpCtx.globalCompositeOperation = 'source-over';
+
+      // Create soft edge gradient mask
+      const edgeWidth = Math.min(80, revealW * 0.3);
+      const grad = tmpCtx.createLinearGradient(revealW - edgeWidth, 0, revealW, 0);
+      grad.addColorStop(0, 'rgba(0,0,0,1)');
+      grad.addColorStop(1, 'rgba(0,0,0,0)');
+
+      // Solid area
+      tmpCtx.fillStyle = 'rgba(0,0,0,1)';
+      tmpCtx.fillRect(0, 0, Math.max(0, revealW - edgeWidth), canvasH);
+
+      // Soft edge
+      tmpCtx.fillStyle = grad;
+      tmpCtx.fillRect(Math.max(0, revealW - edgeWidth), 0, edgeWidth, canvasH);
+
+      // Mask with real image
+      tmpCtx.globalCompositeOperation = 'source-in';
+      drawCoverOn(tmpCtx, realImg, canvasW, canvasH);
+
+      // Overlay on main canvas
+      ctx.globalCompositeOperation = 'source-over';
+      ctx.globalAlpha = 1;
+      ctx.save();
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.drawImage(tmpCanvas, 0, 0);
+      ctx.restore();
+    }
+
+    function onScrollReveal() {
+      const rect = container.getBoundingClientRect();
+      const vh = window.innerHeight;
+      // Start when section enters viewport, complete when center of section reaches center of viewport
+      const start = vh;
+      const end = vh * 0.2;
+      const raw = (start - rect.top) / (start - end);
+      scrollRevealProgress = Math.max(0, Math.min(1, raw));
+      drawScrollReveal();
+    }
+
+    window.addEventListener('scroll', onScrollReveal, { passive: true });
+    if (typeof lenis !== 'undefined') {
+      lenis.on('scroll', onScrollReveal);
+    }
+
+    // No touch events on mobile — scroll only
+  } else {
+    // Desktop: touch events (for touch-enabled desktops/tablets)
+    container.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+      isInside = true;
+      const t = e.touches[0];
+      const rect = container.getBoundingClientRect();
+      mouseX = t.clientX - rect.left;
+      mouseY = t.clientY - rect.top;
+      trail = [];
+      startLoop();
+    }, { passive: false });
+
+    container.addEventListener('touchmove', (e) => {
+      e.preventDefault();
+      const t = e.touches[0];
+      const rect = container.getBoundingClientRect();
+      mouseX = t.clientX - rect.left;
+      mouseY = t.clientY - rect.top;
+      trail.push({ x: mouseX, y: mouseY });
+      if (trail.length > TRAIL_MAX) trail.shift();
+    }, { passive: false });
+
+    container.addEventListener('touchend', () => {
+      isInside = false;
+      startLoop();
+    });
+  }
 
   // Init
-  sketchImg.onload = () => initCanvas();
+  sketchImg.onload = () => {
+    initCanvas();
+    if (isMobile) {
+      // Trigger initial scroll check
+      const rect = container.getBoundingClientRect();
+      if (rect.top < window.innerHeight) {
+        setTimeout(() => window.dispatchEvent(new Event('scroll')), 100);
+      }
+    }
+  };
   if (sketchImg.complete) initCanvas();
 
   let resizeTimer;
