@@ -98,7 +98,7 @@ body {
 .gear-header h2,
 .form-left h2,
 .program-card h3,
-.kart-card h3,
+.kart-info h3,
 .team-card h3,
 .pathway-overlay .big {
   font-style: italic;
@@ -108,6 +108,16 @@ body {
 ::selection {
   background: var(--red);
   color: #ffffff;
+}
+
+/* ── Eyebrow / caption label (shared) ── */
+.eyebrow {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--red);
 }
 
 /* ── Reveal ── */
@@ -280,12 +290,6 @@ nav.scrolled {
 }
 
 .hero-label {
-  font-family: var(--font-heading);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--red);
   margin-bottom: 1.25rem;
 }
 
@@ -435,12 +439,6 @@ nav.scrolled {
 
 /* ── Section Label ── */
 .sec-label {
-  font-family: var(--font-heading);
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--red);
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -1166,83 +1164,130 @@ nav.scrolled {
   line-height: 1.65;
 }
 
-.karts-grid {
+/* ── Karts showcase: slider (2 cols) + info (1 col) ── */
+.karts-showcase {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
+  grid-template-columns: 2fr 1fr;
   border: 1px solid var(--border);
 }
 
-.kart-card {
-  border-right: 1px solid var(--border);
+.kart-slider {
   position: relative;
-  transition: background 0.4s;
-  display: flex;
-  flex-direction: column;
-}
-
-.kart-card:last-child {
-  border-right: none;
-}
-
-.kart-card:hover {
-  background: var(--bg-card);
-}
-
-.kart-card-img {
-  width: 100%;
-  height: 230px;
   overflow: hidden;
-  padding: 8px;
+  border-right: 1px solid var(--border);
+  aspect-ratio: 3 / 2;
+  background: linear-gradient(135deg, #f3f3f3 0%, #e6e6e6 100%);
+  cursor: grab;
+  touch-action: pan-y;
 }
 
-.kart-card-img img {
+.kart-slider.dragging {
+  cursor: grabbing;
+}
+
+.kart-slider-track {
+  display: flex;
+  height: 100%;
+  will-change: transform;
+}
+
+.kart-slide {
+  flex: 0 0 100%;
+  height: 100%;
+}
+
+.kart-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
-.kart-card-info {
-  padding: 2rem 2.5rem 2.5rem;
-}
-
-.kart-category {
-  font-family: var(--font-heading);
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--red);
-  margin-bottom: 1rem;
-}
-
-.kart-card h3 {
-  font-family: var(--font-display);
-  font-size: 2rem;
+/* Arrows */
+.kart-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(4px);
   color: var(--white);
-  text-transform: uppercase;
-  margin-bottom: 0.75rem;
-}
-
-.kart-card p {
-  font-size: 0.88rem;
-  font-weight: 300;
-  color: var(--text-muted);
-  line-height: 1.65;
-}
-
-.kart-engine {
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 2rem;
-  padding: 1.75rem 2.5rem;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-top: 0px;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s, background 0.3s;
 }
 
-.kart-engine .powered {
+.kart-slider:hover .kart-arrow {
+  opacity: 1;
+}
+
+.kart-arrow:hover {
+  background: var(--red);
+  color: #fff;
+  border-color: var(--red);
+}
+
+.kart-arrow-prev {
+  left: 12px;
+}
+
+.kart-arrow-next {
+  right: 12px;
+}
+
+/* Dots */
+.kart-dots {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  gap: 8px;
+}
+
+.kart-dots button {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  background: rgba(17, 17, 17, 0.25);
+  cursor: pointer;
+  transition: background 0.3s, width 0.3s;
+}
+
+.kart-dots button.active {
+  background: var(--red);
+  width: 22px;
+}
+
+/* Info column */
+.kart-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2.5rem 2.5rem 2.75rem;
+}
+
+.kart-info .engine-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.kart-info .powered {
   font-family: var(--font-heading);
   font-size: 0.7rem;
   font-weight: 500;
@@ -1251,40 +1296,30 @@ nav.scrolled {
   color: var(--text-dim);
 }
 
-.kart-engine .engine-name {
+.kart-info .engine-logo {
+  height: 30px;
+  width: auto;
+  display: block;
+  /* opacity: 0.2; */
+}
+
+.kart-category {
+  margin-bottom: 1rem;
+}
+
+.kart-info h3 {
   font-family: var(--font-display);
-  font-size: 2.5rem;
-  color: var(--red);
-  line-height: 1;
-}
-
-.kart-engine .focus-items {
-  margin-left: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.kart-engine .focus-items span {
-  font-family: var(--font-heading);
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
+  font-size: 2rem;
+  color: var(--white);
   text-transform: uppercase;
-  color: var(--text-muted);
-  position: relative;
-  padding-left: 1rem;
+  margin-bottom: 0.75rem;
 }
 
-.kart-engine .focus-items span::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 5px;
-  height: 5px;
-  background: var(--red);
-  transform: translateY(-50%);
+.kart-info p {
+  font-size: 0.88rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.65;
 }
 
 /* ── Team ── */
@@ -1381,13 +1416,7 @@ nav.scrolled {
 }
 
 .team-role {
-  font-family: var(--font-heading);
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--red);
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.5rem;
 }
 
 .team-card h3 {
@@ -1533,12 +1562,6 @@ nav.scrolled {
 
 .driver-info .tag,
 .driver-info .driver-role {
-  font-family: var(--font-heading);
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--red);
   margin-bottom: 0.5rem;
   display: block;
 }
@@ -2043,17 +2066,18 @@ footer {
     border-bottom: none;
   }
 
-  .karts-grid {
+  .karts-showcase {
     grid-template-columns: 1fr;
   }
 
-  .kart-card {
+  .kart-slider {
     border-right: none;
     border-bottom: 1px solid var(--border);
   }
 
-  .kart-card:last-child {
-    border-bottom: none;
+  .kart-info {
+    justify-content: flex-start;
+    padding: 2rem 1.5rem 2.25rem;
   }
 
   .approach-steps {
@@ -2091,16 +2115,6 @@ footer {
   .karts-header p,
   .team-header p {
     text-align: left;
-  }
-
-  .kart-engine {
-    flex-wrap: wrap;
-  }
-
-  .kart-engine .focus-items {
-    margin-left: 0;
-    width: 100%;
-    margin-top: 0.5rem;
   }
 
   .gear-grid {

@@ -465,17 +465,45 @@
   });
 })();
 
-// Form
-function handleSubmit(e) {
-  e.preventDefault();
-  const btn = e.target.querySelector('button[type="submit"]');
-  const orig = btn.innerHTML;
-  btn.innerHTML = 'Submitting...';
-  btn.disabled = true;
-  setTimeout(() => {
-    btn.innerHTML = 'Application Sent &#10003;';
-    btn.style.background = '#1a7a1a';
-    btn.style.color = '#ffffff';
-    setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; btn.disabled = false; e.target.reset(); }, 3000);
-  }, 1500);
-}
+// Form — submit to Formspree via AJAX (no page redirect)
+(() => {
+  const form = document.getElementById('applicationForm');
+  if (!form) return;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    const orig = btn.innerHTML;
+    btn.innerHTML = 'Submitting...';
+    btn.disabled = true;
+
+    const reset = (delay = 3000) => setTimeout(() => {
+      btn.innerHTML = orig;
+      btn.style.background = '';
+      btn.style.color = '';
+      btn.disabled = false;
+    }, delay);
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' },
+      });
+      if (res.ok) {
+        btn.innerHTML = 'Application Sent &#10003;';
+        btn.style.background = '#1a7a1a';
+        btn.style.color = '#ffffff';
+        form.reset();
+        reset();
+      } else {
+        throw new Error('Formspree returned ' + res.status);
+      }
+    } catch (err) {
+      btn.innerHTML = 'Failed &mdash; please try again';
+      btn.style.background = '#b00e0e';
+      btn.style.color = '#ffffff';
+      reset();
+    }
+  });
+})();

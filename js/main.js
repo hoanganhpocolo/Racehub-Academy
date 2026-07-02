@@ -307,3 +307,103 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 })();
 
+// Kart slider — autoplay + drag/grab + arrows + dots
+(() => {
+  const slider = document.getElementById('kartSlider');
+  const track = document.getElementById('kartTrack');
+  const dotsWrap = document.getElementById('kartDots');
+  if (!slider || !track) return;
+
+  const slides = Array.from(track.children);
+  const count = slides.length;
+  let index = 0;
+  let autoTimer = null;
+  const AUTOPLAY_MS = 4000;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Build dots
+  const dots = slides.map((_, i) => {
+    const b = document.createElement('button');
+    b.setAttribute('aria-label', `Go to slide ${i + 1}`);
+    b.addEventListener('click', () => { goTo(i); restartAuto(); });
+    dotsWrap.appendChild(b);
+    return b;
+  });
+
+  function render(animate = true) {
+    track.style.transition = animate ? 'transform 0.5s cubic-bezier(0.22, 1, 0.36, 1)' : 'none';
+    track.style.transform = `translateX(${-index * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === index));
+  }
+
+  function goTo(i) {
+    index = (i + count) % count;
+    render();
+  }
+  const next = () => goTo(index + 1);
+  const prev = () => goTo(index - 1);
+
+  // Arrows
+  const prevBtn = document.getElementById('kartPrev');
+  const nextBtn = document.getElementById('kartNext');
+  if (prevBtn) prevBtn.addEventListener('click', () => { prev(); restartAuto(); });
+  if (nextBtn) nextBtn.addEventListener('click', () => { next(); restartAuto(); });
+
+  // Autoplay
+  function startAuto() {
+    if (reduceMotion || autoTimer) return;
+    autoTimer = setInterval(next, AUTOPLAY_MS);
+  }
+  function stopAuto() {
+    if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
+  }
+  function restartAuto() { stopAuto(); startAuto(); }
+
+  slider.addEventListener('mouseenter', stopAuto);
+  slider.addEventListener('mouseleave', startAuto);
+
+  // Drag / grab (pointer events for mouse + touch)
+  let dragging = false;
+  let startX = 0;
+  let deltaX = 0;
+  let width = slider.offsetWidth;
+
+  slider.addEventListener('pointerdown', (e) => {
+    // Don't start a drag when pressing the arrows or dots — let their click fire
+    if (e.target.closest('.kart-arrow') || e.target.closest('.kart-dots')) return;
+    dragging = true;
+    startX = e.clientX;
+    deltaX = 0;
+    width = slider.offsetWidth;
+    stopAuto();
+    slider.classList.add('dragging');
+    slider.setPointerCapture(e.pointerId);
+    track.style.transition = 'none';
+  });
+
+  slider.addEventListener('pointermove', (e) => {
+    if (!dragging) return;
+    deltaX = e.clientX - startX;
+    const pct = (deltaX / width) * 100;
+    track.style.transform = `translateX(${-index * 100 + pct}%)`;
+  });
+
+  function endDrag() {
+    if (!dragging) return;
+    dragging = false;
+    slider.classList.remove('dragging');
+    const threshold = width * 0.15;
+    if (deltaX > threshold) prev();
+    else if (deltaX < -threshold) next();
+    else render();
+    restartAuto();
+  }
+  slider.addEventListener('pointerup', endDrag);
+  slider.addEventListener('pointercancel', endDrag);
+
+  window.addEventListener('resize', () => { width = slider.offsetWidth; render(false); });
+
+  render(false);
+  startAuto();
+})();
+
