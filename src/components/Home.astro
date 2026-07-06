@@ -1,0 +1,482 @@
+---
+import LangSwitch from './LangSwitch.astro';
+import { useTranslations, type Locale } from '../i18n/utils';
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<div class="scratch-cursor" id="scratchCursor"></div>
+
+<!-- Nav -->
+<nav id="navbar">
+  <a href="#" class="nav-logo"><img src="/assets/images/Logo-animated.svg" alt={t('nav.logoAlt')} /></a>
+  <div class="nav-links" id="navLinks">
+    <a href="#programs">{t('nav.programs')}</a>
+    <a href="#pathway">{t('nav.pathway')}</a>
+    <a href="#team">{t('nav.team')}</a>
+    <a href="#approach">{t('nav.approach')}</a>
+    <a href="#gear">{t('nav.gear')}</a>
+    <a href="#apply" class="nav-apply">{t('nav.apply')}</a>
+  </div>
+  <LangSwitch lang={lang} />
+  <button class="nav-toggle" id="navToggle" aria-label={t('nav.menu')}>
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="eyebrow hero-label reveal">{t('hero.label')}</div>
+      <h1 class="reveal rd1">{t('hero.line1')}<br />{t('hero.line2')}</h1>
+      <div class="hero-actions reveal rd2">
+        <a href="#apply" class="btn-red">{t('hero.applyBtn')} <span class="arrow">&rarr;</span></a>
+        <a href="#programs" class="btn-ghost">{t('hero.viewPrograms')}</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img
+      src="/assets/images/hero-bg.webp"
+      srcset="/assets/images/hero-bg-800.webp 800w, /assets/images/hero-bg.webp 1440w"
+      sizes="100vw"
+      alt={t('hero.imgAlt')}
+      width="1440"
+      height="656"
+      fetchpriority="high"
+      decoding="async"
+    />
+    <div class="hero-image-fade"></div>
+  </div>
+</section>
+
+<!-- Why Join -->
+<section class="why-section" id="why">
+  <div class="container">
+    <div class="eyebrow sec-label reveal">{t('why.label')} <span class="sec-counter">02</span></div>
+    <div class="why-heading">
+      <h2 class="why-left">{t('why.headingLeft')}</h2>
+      <h2 class="why-right"><span class="red">{t('why.headingRight')}</span></h2>
+    </div>
+    <div class="why-layout">
+      <div class="usp-grid">
+        <div class="usp-card reveal">
+          <img class="usp-icon" src="/assets/icons/icon-structured.svg" alt="" />
+          <h3>{t('why.usp1Title')}</h3>
+          <p>{t('why.usp1Desc')}</p>
+        </div>
+        <div class="usp-card reveal rd1">
+          <img class="usp-icon" src="/assets/icons/icon-racecraft.svg" alt="" />
+          <h3>{t('why.usp2Title')}</h3>
+          <p>{t('why.usp2Desc')}</p>
+        </div>
+        <div class="usp-card reveal rd2">
+          <img class="usp-icon" src="/assets/icons/icon-progression.svg" alt="" />
+          <h3>{t('why.usp3Title')}</h3>
+          <p>{t('why.usp3Desc')}</p>
+        </div>
+        <div class="usp-card reveal rd3">
+          <img class="usp-icon" src="/assets/icons/icon-groups.svg" alt="" />
+          <h3>{t('why.usp4Title')}</h3>
+          <p>{t('why.usp4Desc')}</p>
+        </div>
+        <div class="usp-card reveal rd4">
+          <img class="usp-icon" src="/assets/icons/icon-coaching.svg" alt="" />
+          <h3>{t('why.usp5Title')}</h3>
+          <p>{t('why.usp5Desc')}</p>
+        </div>
+        <div class="usp-card reveal rd5">
+          <img class="usp-icon" src="/assets/icons/icon-pathway.svg" alt="" />
+          <h3>{t('why.usp6Title')}</h3>
+          <p set:html={t('why.usp6Desc')}></p>
+        </div>
+      </div>
+      <div class="why-image reveal rd3">
+        <img src="/assets/images/why-driver.jpg" alt={t('why.imgAlt')} loading="lazy" decoding="async" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Programs + Pathway Wrapper -->
+<div class="programs-pathway-wrapper">
+  <!-- Programs -->
+  <section class="programs-section" id="programs">
+    <div class="programs-bg">
+      <div class="programs-bg-dark"></div>
+      <div class="programs-bg-overlay"></div>
+    </div>
+    <div class="programs-spotlight"></div>
+    <div class="container">
+      <div class="programs-header">
+        <div class="eyebrow sec-label reveal">{t('programs.label')} <span class="sec-counter">03</span></div>
+        <h2 class="reveal rd1">{t('programs.headingLine1')}<br /><span class="red">{t('programs.headingLine2')}</span></h2>
+      </div>
+      <div class="program-cards">
+        <!-- Cadet -->
+        <div class="program-card featured reveal">
+          <div class="program-card-head">
+            <h3>{t('programs.cadetTitle1')}<br /><span class="red">{t('programs.cadetTitle2')}</span></h3>
+            <p class="desc" set:html={t('programs.cadetDesc')}></p>
+          </div>
+          <div class="program-card-body">
+            <ul class="program-list">
+              <li>{t('programs.cadetLi1')}</li>
+              <li>{t('programs.cadetLi2')}</li>
+              <li>{t('programs.cadetLi3')}</li>
+              <li>{t('programs.cadetLi4')}</li>
+              <li>{t('programs.cadetLi5')}</li>
+            </ul>
+          </div>
+          <div class="program-card-foot">
+            <div class="program-price-block">
+              <div class="program-price">12,000,000 <small>VND</small></div>
+              <div class="program-unit">{t('programs.unit')}</div>
+            </div>
+            <a href="#apply" class="btn-red btn-sm">{t('programs.applyBtn')} <span class="arrow">&rarr;</span></a>
+          </div>
+        </div>
+        <!-- Junior -->
+        <div class="program-card reveal rd2">
+          <div class="program-card-head">
+            <h3>{t('programs.juniorTitle1')}<br /><span class="red">{t('programs.juniorTitle2')}</span></h3>
+            <p class="desc" set:html={t('programs.juniorDesc')}></p>
+          </div>
+          <div class="program-card-body">
+            <ul class="program-list">
+              <li>{t('programs.juniorLi1')}</li>
+              <li>{t('programs.juniorLi2')}</li>
+              <li>{t('programs.juniorLi3')}</li>
+              <li>{t('programs.juniorLi4')}</li>
+              <li>{t('programs.juniorLi5')}</li>
+            </ul>
+          </div>
+          <div class="program-card-foot">
+            <div class="program-price-block">
+              <div class="program-price">16,000,000 <small>VND</small></div>
+              <div class="program-unit">{t('programs.unit')}</div>
+            </div>
+            <a href="#apply" class="btn-red btn-sm">{t('programs.applyBtn')} <span class="arrow">&rarr;</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pathway -->
+  <section class="pathway-section" id="pathway">
+    <img src="/assets/images/union-small.png" alt="" class="pathway-union-small" />
+    <div class="pathway-reveal-bg" id="kartReveal">
+      <img src="/assets/images/sketch.webp" alt="" class="pathway-spacer" loading="lazy" decoding="async" />
+      <img src="/assets/images/real.webp" alt="" class="real-base" loading="lazy" decoding="async" />
+      <canvas id="scratchCanvas"></canvas>
+    </div>
+    <div class="container">
+      <div class="pathway-layout">
+        <div class="pathway-text">
+          <div class="eyebrow sec-label reveal">{t('pathway.label')}</div>
+          <h2 class="reveal rd1">{t('pathway.line1')}<br />{t('pathway.toWord')} <span class="red">{t('pathway.racing')}</span></h2>
+        </div>
+        <div class="pathway-items">
+          <div class="pathway-item reveal">
+            <div class="pathway-item-icon"><img src="/assets/icons/icon-pathway-1.svg" alt="" /></div>
+            <p>{t('pathway.item1')}</p>
+          </div>
+          <div class="pathway-item reveal rd1">
+            <div class="pathway-item-icon"><img src="/assets/icons/icon-pathway-2.svg" alt="" /></div>
+            <p>{t('pathway.item2')}</p>
+          </div>
+          <div class="pathway-item reveal rd2">
+            <div class="pathway-item-icon"><img src="/assets/icons/icon-pathway-3.svg" alt="" /></div>
+            <p>{t('pathway.item3')}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div><!-- /programs-pathway-wrapper -->
+
+<div class="stripe"></div>
+
+<!-- Karts -->
+<section class="karts-section" id="karts">
+  <div class="container">
+    <div class="karts-header">
+      <div>
+        <div class="eyebrow sec-label reveal">{t('karts.label')} <span class="sec-counter">05</span></div>
+        <h2 class="reveal rd1">{t('karts.heading1')}<br /><span class="red">{t('karts.heading2')}</span></h2>
+      </div>
+      <p class="reveal rd2">{t('karts.sub')}</p>
+    </div>
+    <div class="karts-showcase reveal rd2">
+      <div class="kart-slider" id="kartSlider">
+        <div class="kart-slider-track" id="kartTrack">
+          <div class="kart-slide"><img loading="lazy" decoding="async" src="/assets/images/001.jpg" alt={t('karts.slideAlt')} draggable="false" /></div>
+          <div class="kart-slide"><img loading="lazy" decoding="async" src="/assets/images/002.jpg" alt={t('karts.slideAlt')} draggable="false" /></div>
+          <div class="kart-slide"><img loading="lazy" decoding="async" src="/assets/images/003.jpg" alt={t('karts.slideAlt')} draggable="false" /></div>
+          <div class="kart-slide"><img loading="lazy" decoding="async" src="/assets/images/004.jpg" alt={t('karts.slideAlt')} draggable="false" /></div>
+          <div class="kart-slide"><img loading="lazy" decoding="async" src="/assets/images/005.jpg" alt={t('karts.slideAlt')} draggable="false" /></div>
+          <div class="kart-slide"><img loading="lazy" decoding="async" src="/assets/images/006.jpg" alt={t('karts.slideAlt')} draggable="false" /></div>
+          <div class="kart-slide"><img loading="lazy" decoding="async" src="/assets/images/007.jpg" alt={t('karts.slideAlt')} draggable="false" /></div>
+          <div class="kart-slide"><img loading="lazy" decoding="async" src="/assets/images/008.jpg" alt={t('karts.slideAlt')} draggable="false" /></div>
+          <div class="kart-slide"><img loading="lazy" decoding="async" src="/assets/images/009.jpg" alt={t('karts.slideAlt')} draggable="false" /></div>
+        </div>
+        <button class="kart-arrow kart-arrow-prev" id="kartPrev" aria-label={t('karts.prev')}>&larr;</button>
+        <button class="kart-arrow kart-arrow-next" id="kartNext" aria-label={t('karts.next')}>&rarr;</button>
+        <div class="kart-dots" id="kartDots"></div>
+      </div>
+      <div class="kart-info">
+        <div class="engine-brand">
+          <span class="powered">{t('karts.powered')}</span>
+          <img class="engine-logo" src="/assets/images/vortexlogo-trim.png" alt={t('karts.logoAlt')} />
+        </div>
+        <div class="kart-info-main">
+          <div class="eyebrow kart-category">{t('karts.category')}</div>
+          <h3>{t('karts.title')}</h3>
+          <p>{t('karts.desc')}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team -->
+<section class="team-section" id="team">
+  <div class="container">
+    <div class="team-header">
+      <div>
+        <div class="eyebrow sec-label reveal">{t('team.label')}</div>
+        <h2 class="reveal rd1">{t('team.heading1')}<br /><span class="red">{t('team.heading2')}</span></h2>
+      </div>
+      <p class="reveal rd2">{t('team.sub')}</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card reveal">
+        <div class="team-card-img"><img src="/assets/images/coach 1.jpg" alt={t('team.davidName')} loading="lazy" decoding="async" /></div>
+        <div class="team-card-info">
+          <div class="eyebrow team-role">{t('team.davidRole')}</div>
+          <h3>{t('team.davidName')}</h3>
+          <p>{t('team.davidBio')}</p>
+        </div>
+      </div>
+      <div class="team-card reveal rd1">
+        <div class="team-card-img"><img src="/assets/images/coach 2.jpg" alt={t('team.blaykeName')} loading="lazy" decoding="async" /></div>
+        <div class="team-card-info">
+          <div class="eyebrow team-role">{t('team.blaykeRole')}</div>
+          <h3>{t('team.blaykeName')}</h3>
+          <p>{t('team.blaykeBio')}</p>
+        </div>
+      </div>
+      <div class="team-card reveal rd2">
+        <div class="team-card-img"><img src="/assets/images/coach 3.webp" alt={t('team.stevenName')} loading="lazy" decoding="async" /></div>
+        <div class="team-card-info">
+          <div class="eyebrow team-role">{t('team.stevenRole')}</div>
+          <h3>{t('team.stevenName')}</h3>
+          <p>{t('team.stevenBio')}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Finish Line -->
+<section class="finish-line-section">
+  <div class="finish-line">
+    <canvas id="finishCanvas"></canvas>
+  </div>
+  <div class="finish-line-overlay"></div>
+</section>
+
+<!-- Drivers + Approach -->
+<section class="drivers-section">
+  <!-- Our Drivers -->
+  <div class="our-drivers-block">
+    <div class="container">
+      <h2 class="drivers-heading reveal">{t('drivers.heading1')} <span class="red">{t('drivers.heading2')}</span></h2>
+      <div class="drivers-grid">
+        <div class="driver-card reveal">
+          <div class="driver-img"><img loading="lazy" decoding="async" src="/assets/images/driver-maxi.jpeg" alt={t('drivers.maxiName')} /></div>
+          <div class="driver-info">
+            <span class="eyebrow driver-role">{t('drivers.maxiRole')}</span>
+            <h3>{t('drivers.maxiName')}</h3>
+            <span class="driver-country">{t('drivers.maxiCountry')}</span>
+          </div>
+        </div>
+        <div class="driver-card reveal rd1">
+          <div class="driver-img"><img loading="lazy" decoding="async" src="/assets/images/drivernoel.jpeg" alt={t('drivers.noelName')} /></div>
+          <div class="driver-info">
+            <span class="eyebrow driver-role">{t('drivers.noelRole')}</span>
+            <h3>{t('drivers.noelName')}</h3>
+            <span class="driver-country">{t('drivers.noelCountry')}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="approach-block" id="approach">
+    <div class="container">
+      <div class="approach-header">
+        <div class="eyebrow sec-label reveal">{t('approach.label')}</div>
+        <h2 class="reveal rd1">{t('approach.heading1')}<br /><span class="red">{t('approach.heading2')}</span></h2>
+      </div>
+      <div class="approach-steps">
+        <div class="approach-step reveal">
+          <h3>{t('approach.step1Title')}</h3>
+          <p>{t('approach.step1Desc')}</p>
+        </div>
+        <div class="approach-step reveal rd1">
+          <h3>{t('approach.step2Title')}</h3>
+          <p>{t('approach.step2Desc')}</p>
+        </div>
+        <div class="approach-step reveal rd2">
+          <h3>{t('approach.step3Title')}</h3>
+          <p>{t('approach.step3Desc')}</p>
+        </div>
+        <div class="approach-step reveal rd3">
+          <h3>{t('approach.step4Title')}</h3>
+          <p>{t('approach.step4Desc')}</p>
+        </div>
+      </div>
+      <div class="approach-locations reveal">
+        <span>{t('approach.trainingAt')}</span>
+        <a href="https://maps.app.goo.gl/9pxbwmoZXCwTzLRY7" target="_blank"><strong>{t('approach.location')}</strong></a>
+      </div>
+      <p class="approach-quote reveal rd1">{t('approach.quote')}</p>
+    </div>
+  </div>
+</section>
+
+<div class="stripe"></div>
+
+<!-- Gear -->
+<section class="gear-section" id="gear">
+  <div class="container">
+    <div class="gear-header">
+      <div>
+        <div class="eyebrow sec-label reveal">{t('gear.label')}</div>
+        <h2 class="reveal rd1">{t('gear.heading1')}<br /><span class="red">{t('gear.heading2')}</span></h2>
+        <p class="reveal rd2">{t('gear.sub')}</p>
+      </div>
+      <div class="gear-preview reveal rd2">
+        <img id="gearPreviewImg" src="/assets/images/Gear_helmet.png" alt={t('gear.previewAlt')} loading="lazy" decoding="async" />
+      </div>
+    </div>
+    <div class="gear-grid">
+      <div class="gear-item reveal" data-gear="Gear_helmet.png">
+        <div class="gear-dot"></div><span>{t('gear.helmet')}</span>
+        <img class="gear-item-img" loading="lazy" decoding="async" src="/assets/images/Gear_helmet.png" alt={t('gear.helmet')} />
+      </div>
+      <div class="gear-item reveal rd1" data-gear="Gear_Racing Suit.png">
+        <div class="gear-dot"></div><span>{t('gear.suit')}</span>
+        <img class="gear-item-img" loading="lazy" decoding="async" src="/assets/images/Gear_Racing Suit.png" alt={t('gear.suit')} />
+      </div>
+      <div class="gear-item reveal rd2" data-gear="Gear_Glove.png">
+        <div class="gear-dot"></div><span>{t('gear.gloves')}</span>
+        <img class="gear-item-img" loading="lazy" decoding="async" src="/assets/images/Gear_Glove.png" alt={t('gear.gloves')} />
+      </div>
+      <div class="gear-item reveal rd3" data-gear="Gear_Shoe.png">
+        <div class="gear-dot"></div><span>{t('gear.shoes')}</span>
+        <img class="gear-item-img" loading="lazy" decoding="async" src="/assets/images/Gear_Shoe.png" alt={t('gear.shoes')} />
+      </div>
+      <div class="gear-item reveal rd4" data-gear="Gear_Rib Protector.png">
+        <div class="gear-dot"></div><span>{t('gear.rib')}</span>
+        <img class="gear-item-img" loading="lazy" decoding="async" src="/assets/images/Gear_Rib Protector.png" alt={t('gear.rib')} />
+      </div>
+      <div class="gear-item reveal rd5" data-gear="Gear_Neck Brace.png">
+        <div class="gear-dot"></div><span>{t('gear.neck')}</span>
+        <img class="gear-item-img" loading="lazy" decoding="async" src="/assets/images/Gear_Neck Brace.png" alt={t('gear.neck')} />
+      </div>
+    </div>
+    <div class="gear-note reveal">{t('gear.note')}</div>
+  </div>
+</section>
+
+<!-- Application Form -->
+<section class="form-section" id="apply">
+  <div class="container">
+    <div class="form-layout">
+      <div class="form-left">
+        <div class="eyebrow sec-label reveal">{t('form.label')}</div>
+        <h2 class="reveal rd1">{t('form.heading1')}<br />{t('form.heading2a')} <span class="red">{t('form.heading2b')}</span></h2>
+        <p class="sub reveal rd2">{t('form.sub')}</p>
+      </div>
+      <div class="form-right reveal rd2">
+        <form id="applicationForm" action="https://formspree.io/f/maqllwba" method="POST">
+          <span class="form-group-title">{t('form.groupDriver')}</span>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="driverName">{t('form.driverNameLabel')}</label>
+              <input type="text" id="driverName" name="driverName" required placeholder={t('form.driverNamePh')} />
+            </div>
+            <div class="form-field">
+              <label for="driverAge">{t('form.ageLabel')}</label>
+              <input type="number" id="driverAge" name="driverAge" required placeholder={t('form.agePh')} min="5" max="99" />
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="experience">{t('form.experienceLabel')}</label>
+            <select id="experience" name="experience" required>
+              <option value="" disabled selected>{t('form.experiencePh')}</option>
+              <option value="beginner">{t('form.expBeginner')}</option>
+              <option value="some">{t('form.expSome')}</option>
+              <option value="racing">{t('form.expRacing')}</option>
+            </select>
+          </div>
+
+          <span class="form-group-title">{t('form.groupParent')}</span>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="parentName">{t('form.parentNameLabel')}</label>
+              <input type="text" id="parentName" name="parentName" placeholder={t('form.parentNamePh')} />
+            </div>
+            <div class="form-field">
+              <label for="phone">{t('form.phoneLabel')}</label>
+              <input type="tel" id="phone" name="phone" required placeholder={t('form.phonePh')} />
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="email">{t('form.emailLabel')}</label>
+            <input type="email" id="email" name="email" required placeholder={t('form.emailPh')} />
+          </div>
+
+          <span class="form-group-title">{t('form.groupContext')}</span>
+          <div class="form-field">
+            <label for="goals">{t('form.goalsLabel')}</label>
+            <textarea id="goals" name="goals" placeholder={t('form.goalsPh')}></textarea>
+          </div>
+          <div class="form-field">
+            <label for="program">{t('form.programLabel')}</label>
+            <select id="program" name="program" required>
+              <option value="" disabled selected>{t('form.programPh')}</option>
+              <option value="cadet">{t('form.programCadet')}</option>
+              <option value="junior">{t('form.programJunior')}</option>
+              <option value="not-sure">{t('form.programNotSure')}</option>
+            </select>
+          </div>
+
+          <div class="form-submit">
+            <button type="submit" class="btn-red">{t('form.submit')} <span class="arrow">&rarr;</span></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<div class="stripe"></div>
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand"><img src="/assets/images/Logo.svg" alt={t('footer.logoAlt')} loading="lazy" decoding="async" /></div>
+      <div class="footer-copy">{t('footer.copy')}</div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,15 @@
+---
+import type { Locale } from '../i18n/utils';
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+---
+
+<div class="lang-switch">
+  <a href="/en/" class:list={['lang-link', { active: lang === 'en' }]}>EN</a>
+  <span class="lang-sep">|</span>
+  <a href="/vi/" class:list={['lang-link', { active: lang === 'vi' }]}>VI</a>
+</div>

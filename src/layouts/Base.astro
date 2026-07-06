@@ -1,0 +1,76 @@
+---
+import { useTranslations, type Locale } from '../i18n/utils';
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const site = Astro.site ?? new URL('http://localhost:4321');
+const enUrl = new URL('/en/', site).href;
+const viUrl = new URL('/vi/', site).href;
+const canonical = new URL(Astro.url.pathname, site).href;
+const ogLocale = lang === 'vi' ? 'vi_VN' : 'en_US';
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{t('meta.title')}</title>
+    <meta name="description" content={t('meta.description')} />
+
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="en" href={enUrl} />
+    <link rel="alternate" hreflang="vi" href={viUrl} />
+    <link rel="alternate" hreflang="x-default" href={enUrl} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={ogLocale} />
+    <meta property="og:title" content={t('meta.title')} />
+    <meta property="og:description" content={t('meta.description')} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Preload the hero image (LCP) — responsive so mobile fetches the small variant -->
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/images/hero-bg.webp"
+      imagesrcset="/assets/images/hero-bg-800.webp 800w, /assets/images/hero-bg.webp 1440w"
+      imagesizes="100vw"
+      fetchpriority="high"
+    />
+
+    <!-- Preload the display weight used by the hero heading -->
+    <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/SFUEurostileBoldOblique.woff2" crossorigin />
+
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <!-- Google Fonts loaded non-render-blocking (text swaps in when ready) -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;500;600;700&family=Bebas+Neue&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;500;600;700&family=Bebas+Neue&display=swap"
+      />
+    </noscript>
+  </head>
+
+  <body>
+    <slot />
+
+    <script is:inline src="https://unpkg.com/lenis@1/dist/lenis.min.js"></script>
+    <script is:inline src="/js/main.js"></script>
+    <script is:inline src="/js/kart-reveal.js"></script>
+  </body>
+</html>
