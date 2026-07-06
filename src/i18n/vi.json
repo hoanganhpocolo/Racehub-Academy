@@ -143,8 +143,8 @@
   "form": {
     "label": "Đăng ký",
     "heading1": "Đăng ký vào",
-    "heading2a": "Học viện",
-    "heading2b": "Tay đua",
+    "heading2a": "Tay đua",
+    "heading2b": "Học viện",
     "sub": "Cho chúng tôi biết đôi chút về tay đua, chúng tôi sẽ liên hệ để trao đổi các bước tiếp theo.",
     "groupDriver": "Thông tin tay đua",
     "driverNameLabel": "Tên tay đua *",
