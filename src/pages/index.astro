@@ -6,6 +6,7 @@ const site = Astro.site ?? new URL('http://localhost:4321');
 const enUrl = new URL('/en/', site).href;
 const viUrl = new URL('/vi/', site).href;
 const rootUrl = new URL('/', site).href;
+const ogImage = new URL('/assets/images/social-image.jpg', site).href;
 ---
 
 <!doctype html>
@@ -23,6 +24,26 @@ const rootUrl = new URL('/', site).href;
     <link rel="alternate" hreflang="en" href={enUrl} />
     <link rel="alternate" hreflang="vi" href={viUrl} />
     <link rel="alternate" hreflang="x-default" href={enUrl} />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon-192.png" />
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png" />
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={rootUrl} />
+    <meta property="og:site_name" content="Racehub Driver's Academy" />
+    <meta property="og:title" content="Racehub Driver's Academy" />
+    <meta
+      property="og:description"
+      content="Structured karting training in Vietnam — racecraft, coaching, and a real pathway from first laps to competitive racing."
+    />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={ogImage} />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

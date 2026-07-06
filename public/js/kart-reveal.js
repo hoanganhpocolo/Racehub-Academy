@@ -465,7 +465,8 @@
   });
 })();
 
-// Form — submit to Formspree via AJAX (no page redirect)
+// Form submit — POSTs to the same-origin /api/apply serverless endpoint,
+// which records the row in Google Sheets and emails the notification (Resend).
 (() => {
   const form = document.getElementById('applicationForm');
   if (!form) return;
@@ -484,33 +485,32 @@
     btn.innerHTML = t.submitting;
     btn.disabled = true;
 
-    const reset = (delay = 3000) => setTimeout(() => {
-      btn.innerHTML = orig;
-      btn.style.background = '';
-      btn.style.color = '';
-      btn.disabled = false;
-    }, delay);
+    const done = (ok) => {
+      btn.innerHTML = ok ? t.sent : t.failed;
+      btn.style.background = ok ? '#1a7a1a' : '#b00e0e';
+      btn.style.color = '#ffffff';
+      if (ok) form.reset();
+      setTimeout(() => {
+        btn.innerHTML = orig;
+        btn.style.background = '';
+        btn.style.color = '';
+        btn.disabled = false;
+      }, 3000);
+    };
 
     try {
+      const data = Object.fromEntries(new FormData(form).entries());
+      data.lang = document.documentElement.lang || 'en';
+
       const res = await fetch(form.action, {
         method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' },
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
       });
-      if (res.ok) {
-        btn.innerHTML = t.sent;
-        btn.style.background = '#1a7a1a';
-        btn.style.color = '#ffffff';
-        form.reset();
-        reset();
-      } else {
-        throw new Error('Formspree returned ' + res.status);
-      }
+      const result = await res.json().catch(() => ({ ok: res.ok }));
+      done(res.ok && result.ok !== false);
     } catch (err) {
-      btn.innerHTML = t.failed;
-      btn.style.background = '#b00e0e';
-      btn.style.color = '#ffffff';
-      reset();
+      done(false);
     }
   });
 })();
