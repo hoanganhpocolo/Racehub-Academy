@@ -13,3 +13,7 @@ npm-debug.log*
 # Secrets
 .env
 .env.local
+
+# Working translation exports (not source)
+racehub-content-en-vi*.xlsx
+racehub-content-en-vi - *.csv

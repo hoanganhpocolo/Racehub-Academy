@@ -23,14 +23,14 @@
   },
   "why": {
     "label": "Why Join",
-    "headingLeft": "Not Everyone",
-    "headingRight": "Belongs Here",
+    "headingLeft": "Your Race",
+    "headingRight": "Starts Here",
     "usp1Title": "Structured Training",
     "usp1Desc": "Every session follows a clear plan focused on improvement, not just track time.",
     "usp2Title": "Real Racecraft",
     "usp2Desc": "We teach positioning, decision-making, and race awareness — not just speed.",
-    "usp3Title": "Consistent Progression",
-    "usp3Desc": "Drivers build skills step by step through regular, focused training.",
+    "usp3Title": "Kart Engineering",
+    "usp3Desc": "We teach drivers and parents how to maintain, prepare, and set up their karts properly.",
     "usp4Title": "Small Groups",
     "usp4Desc": "Limited drivers per session to ensure proper coaching and individual feedback.",
     "usp5Title": "Coaching That Matters",
@@ -47,20 +47,20 @@
     "applyBtn": "Apply Now",
     "cadetTitle1": "Cadet",
     "cadetTitle2": "Program",
-    "cadetDesc": "Sunday program for cadet drivers. 2 track weekends at Dai Nam with <strong>Coach Steven</strong>, assisted by Peter, and 2 simulator weekends at Cheat Code Cafe, BLOQ with <strong>Coach Blayke Philips</strong> or Coach Steven.",
+    "cadetDesc": "Saturday program for cadet drivers. 2 track weekends at Dai Nam with <strong>Coach David</strong>, assisted by Peter, and 2 simulator weekends at Cheat Code Cafe located in the BLOQ in the heart of Thao Dien with <strong>Coach Blayke Philips</strong>.",
     "cadetLi1": "HCMC pick-up at 6:30 AM",
     "cadetLi2": "Dai Nam training from 8:00 AM–12:00 PM",
     "cadetLi3": "2 drivers on track at a time",
     "cadetLi4": "Track heats, feedback, and video review",
-    "cadetLi5": "Simulator training with Blayke or Steven",
+    "cadetLi5": "Simulator training with Coach Blayke Philips",
     "juniorTitle1": "Junior",
     "juniorTitle2": "Program",
-    "juniorDesc": "Sunday program for junior drivers. 2 track weekends at Dai Nam with <strong>Coach Steven</strong>, assisted by Peter, and 2 simulator weekends at Cheat Code Cafe, BLOQ with <strong>Coach Blayke Philips</strong> or Coach Steven.",
+    "juniorDesc": "Saturday program for junior drivers. 2 track weekends at Dai Nam with <strong>Coach David</strong>, assisted by Peter, and 2 simulator weekends at Cheat Code Cafe located in the BLOQ in the heart of Thao Dien with <strong>Coach Blayke Philips</strong>.",
     "juniorLi1": "HCMC pick-up at 6:30 AM",
     "juniorLi2": "Dai Nam training from 8:00 AM–12:00 PM",
     "juniorLi3": "2 drivers on track at a time",
     "juniorLi4": "Braking, lines, racecraft, and consistency",
-    "juniorLi5": "Simulator training with Blayke or Steven"
+    "juniorLi5": "Simulator training with Coach Blayke Philips"
   },
   "pathway": {
     "label": "Racing Pathway",
@@ -175,6 +175,12 @@
   },
   "footer": {
     "logoAlt": "Racehub",
+    "company": "Race Hub Company Limited",
+    "taxLabel": "Tax code",
+    "addressLabel": "Address",
+    "address": "18 Street No. 2, Van Phuc 1 Residential Area, Hiep Binh Ward, Ho Chi Minh City, Vietnam",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
     "copy": "© 2026 Racehub Driver's Academy. All rights reserved."
   }
 }

@@ -77,7 +77,7 @@ const t = useTranslations(lang);
           <p>{t('why.usp2Desc')}</p>
         </div>
         <div class="usp-card reveal rd2">
-          <img class="usp-icon" src="/assets/icons/icon-progression.svg" alt="" />
+          <img class="usp-icon" src="/assets/icons/icon-wrench.svg" alt="" />
           <h3>{t('why.usp3Title')}</h3>
           <p>{t('why.usp3Desc')}</p>
         </div>
@@ -474,8 +474,30 @@ const t = useTranslations(lang);
 <div class="stripe"></div>
 <footer>
   <div class="container">
-    <div class="footer-inner">
-      <div class="footer-brand"><img src="/assets/images/Logo.svg" alt={t('footer.logoAlt')} loading="lazy" decoding="async" /></div>
+    <div class="footer-top">
+      <div class="footer-brand-col">
+        <div class="footer-brand"><img src="/assets/images/Logo.svg" alt={t('footer.logoAlt')} loading="lazy" decoding="async" /></div>
+        <p class="footer-company">{t('footer.company')}</p>
+        <div class="footer-social">
+          <a href="https://facebook.com/racehub.academy" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.51 1.53-1.51H16.7V3.62c-.28-.04-1.24-.12-2.36-.12-2.34 0-3.94 1.43-3.94 4.05v2.26H7.7V13h2.7v8z"/></svg>
+          </a>
+          <a href="https://instagram.com/racehub.academy" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.42.56.21.96.47 1.38.9.43.42.69.82.9 1.38.17.42.37 1.05.42 2.22.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.42 2.23-.21.56-.47.96-.9 1.38-.42.43-.82.69-1.38.9-.42.17-1.06.37-2.23.42-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.42-.56-.21-.96-.47-1.38-.9-.43-.42-.69-.82-.9-1.38-.17-.42-.37-1.06-.42-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.42-2.23.21-.56.47-.96.9-1.38.42-.43.82-.69 1.38-.9.42-.17 1.06-.37 2.23-.42C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.13 1.38C1.35 2.68.93 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.38 2.13.67.66 1.34 1.08 2.13 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.9 5.9 0 0 0 2.13-1.38 5.9 5.9 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.9 5.9 0 0 0-1.38-2.13A5.9 5.9 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0m0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84m0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4m6.41-11.85a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@racehub.academy" target="_blank" rel="noopener" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.2v12.9a2.59 2.59 0 0 1-2.6 2.5 2.6 2.6 0 1 1 .7-5.09V10.1a5.77 5.77 0 0 0-.7-.05A5.78 5.78 0 1 0 15.2 15.6V8.36a7.5 7.5 0 0 0 4.4 1.4V6.56a4.27 4.27 0 0 1-3-.74"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-info">
+        <div class="footer-row"><span class="footer-label">{t('footer.taxLabel')}</span><span class="footer-value">0319492726</span></div>
+        <div class="footer-row"><span class="footer-label">{t('footer.addressLabel')}</span><span class="footer-value">{t('footer.address')}</span></div>
+        <div class="footer-row"><span class="footer-label">{t('footer.emailLabel')}</span><span class="footer-value"><a href="mailto:contact@racehub-academy.com">contact@racehub-academy.com</a></span></div>
+        <div class="footer-row"><span class="footer-label">{t('footer.phoneLabel')}</span><span class="footer-value"><a href="tel:+84935046906">+84 935 046 906</a></span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
       <div class="footer-copy">{t('footer.copy')}</div>
     </div>
   </div>

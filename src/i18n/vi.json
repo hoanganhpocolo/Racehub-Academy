@@ -23,14 +23,14 @@
   },
   "why": {
     "label": "Vì sao tham gia",
-    "headingLeft": "Không Phải Ai",
-    "headingRight": "Cũng Hợp Nơi Đây",
+    "headingLeft": "Đường Đua Của Bạn",
+    "headingRight": "Bắt Đầu Từ Đây",
     "usp1Title": "Đào tạo bài bản",
     "usp1Desc": "Mỗi buổi tập đều theo kế hoạch rõ ràng, tập trung vào tiến bộ chứ không chỉ chạy cho có.",
     "usp2Title": "Kỹ năng đua thực chiến",
     "usp2Desc": "Chúng tôi dạy cách chọn vị trí, ra quyết định và quan sát đường đua — không chỉ tốc độ.",
-    "usp3Title": "Tiến bộ đều đặn",
-    "usp3Desc": "Tay đua xây dựng kỹ năng từng bước qua các buổi tập đều đặn và tập trung.",
+    "usp3Title": "Kỹ thuật Kart",
+    "usp3Desc": "Chúng tôi hướng dẫn tay đua và phụ huynh cách bảo dưỡng, chuẩn bị và tinh chỉnh kart đúng cách.",
     "usp4Title": "Nhóm nhỏ",
     "usp4Desc": "Giới hạn số tay đua mỗi buổi để đảm bảo huấn luyện sát sao và phản hồi riêng cho từng người.",
     "usp5Title": "Huấn luyện thực chất",
@@ -175,6 +175,12 @@
   },
   "footer": {
     "logoAlt": "Racehub",
+    "company": "Race Hub Company Limited",
+    "taxLabel": "Mã số thuế",
+    "addressLabel": "Địa chỉ",
+    "address": "18 đường số 2, Khu nhà ở Vạn Phúc 1, Phường Hiệp Bình, Thành phố Hồ Chí Minh, Việt Nam",
+    "emailLabel": "Email",
+    "phoneLabel": "Điện thoại",
     "copy": "© 2026 Học viện Đua xe Racehub. Bảo lưu mọi quyền."
   }
 }
