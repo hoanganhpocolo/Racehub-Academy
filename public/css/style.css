@@ -326,7 +326,7 @@ nav.scrolled {
 .hero h1 {
   font-family: var(--font-display);
   font-size: clamp(3rem, 5.4vw, 77px);
-  line-height: 0.95;
+  line-height: 1.1;
   letter-spacing: 0.02em;
   text-transform: uppercase;
   color: #2a2a2a;
@@ -662,7 +662,7 @@ nav.scrolled {
 .programs-header h2 {
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 5vw, 4.5rem);
-  line-height: 0.95;
+  line-height: 1.1;
   text-transform: uppercase;
   color: #ffffff;
   margin-bottom: 1rem;
@@ -1169,7 +1169,7 @@ nav.scrolled {
 .karts-header h2 {
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 5vw, 4.5rem);
-  line-height: 0.95;
+  line-height: 1.1;
   text-transform: uppercase;
   color: var(--white);
 }
@@ -1362,7 +1362,7 @@ nav.scrolled {
 .team-header h2 {
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 5vw, 4.5rem);
-  line-height: 0.95;
+  line-height: 1.1;
   text-transform: uppercase;
   color: var(--white);
 }
@@ -1524,7 +1524,7 @@ nav.scrolled {
 .drivers-heading {
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 5vw, 4.5rem);
-  line-height: 0.95;
+  line-height: 1.1;
   text-transform: uppercase;
   font-style: italic;
   color: #ffffff;
@@ -1671,7 +1671,7 @@ nav.scrolled {
 .approach-header h2 {
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 5vw, 4.5rem);
-  line-height: 0.95;
+  line-height: 1.1;
   text-transform: uppercase;
   color: var(--white);
   margin-bottom: 1rem;
@@ -1800,7 +1800,7 @@ nav.scrolled {
 .gear-header h2 {
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 5vw, 4.5rem);
-  line-height: 0.95;
+  line-height: 1.1;
   text-transform: uppercase;
   color: var(--white);
   margin-bottom: 1rem;
@@ -1895,7 +1895,7 @@ nav.scrolled {
 .form-left h2 {
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 5vw, 4.5rem);
-  line-height: 0.95;
+  line-height: 1.1;
   text-transform: uppercase;
   color: var(--white);
   margin-bottom: 1rem;

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Học viện Đua xe Racehub",
+    "title": "Câu lạc bộ Đua xe Racehub",
     "description": "Đào tạo karting bài bản tại Việt Nam — kỹ năng đua, huấn luyện chuyên sâu và lộ trình thực thụ từ vòng chạy đầu tiên đến đấu trường thi đấu."
   },
   "nav": {
@@ -14,19 +14,19 @@
     "menu": "Menu"
   },
   "hero": {
-    "label": "Học viện Đua xe Racehub",
-    "line1": "Từ Vòng Chạy Đầu Tiên",
-    "line2": "Đến Vạch Xuất Phát",
-    "applyBtn": "Đăng ký vào Học viện",
+    "label": "Câu lạc bộ Đua xe Racehub",
+    "line1": "Từ sân tập",
+    "line2": "đến giải đua chuyên nghiệp",
+    "applyBtn": "Đăng ký tập luyện",
     "viewPrograms": "Xem chương trình",
     "imgAlt": "Đua kart"
   },
   "why": {
-    "label": "Vì sao tham gia",
-    "headingLeft": "Đường Đua Của Bạn",
-    "headingRight": "Bắt Đầu Từ Đây",
-    "usp1Title": "Đào tạo bài bản",
-    "usp1Desc": "Mỗi buổi tập đều theo kế hoạch rõ ràng, tập trung vào tiến bộ chứ không chỉ chạy cho có.",
+    "label": "Sức hút từ Race Hub",
+    "headingLeft": "Dành cho người",
+    "headingRight": "dám khác biệt",
+    "usp1Title": "Đào tạo chuyên sâu",
+    "usp1Desc": "Mỗi phiên huấn luyện đều được thiết kế với mục tiêu cụ thể, tập trung vào sự cải thiện và hiệu quả thay vì chỉ là thời gian trên đường đua.",
     "usp2Title": "Kỹ năng đua thực chiến",
     "usp2Desc": "Chúng tôi dạy cách chọn vị trí, ra quyết định và quan sát đường đua — không chỉ tốc độ.",
     "usp3Title": "Kỹ thuật Kart",
@@ -37,11 +37,11 @@
     "usp5Desc": "Mỗi lượt chạy đều được phân tích. Tay đua hiểu rõ cần sửa gì và cải thiện thế nào.",
     "usp6Title": "Lộ trình thi đấu",
     "usp6Desc": "Cơ hội tiến lên đua ở cấp khu vực, bao gồm <a href=\"https://www.vortex-rok.com/championship_responsive.php?n=ASIA&amp;anno=2026\" target=\"_blank\" rel=\"noopener\">giải ROK</a>.",
-    "imgAlt": "Tay đua kart"
+    "imgAlt": "Tay đua go-kart"
   },
   "programs": {
     "label": "Chương trình",
-    "headingLine1": "Chương trình Phát triển",
+    "headingLine1": "Chương trình Phát triển",
     "headingLine2": "Tay đua",
     "unit": "Từ / mỗi tháng",
     "applyBtn": "Đăng ký ngay",
@@ -64,30 +64,30 @@
   },
   "pathway": {
     "label": "Lộ trình thi đấu",
-    "line1": "Từ Tập Luyện",
+    "line1": "Từ Tập Luyện",
     "toWord": "Đến",
-    "racing": "Đường Đua",
+    "racing": "Đường Đua",
     "item1": "Tập luyện và thi đấu tại các trường đua khu vực như Bira và Sepang",
     "item2": "Tham gia các giải đua được ROK hỗ trợ",
     "item3": "Được huấn luyện thi đấu, chuẩn bị và hỗ trợ ngay tại đường đua"
   },
   "karts": {
-    "label": "Trang bị",
+    "label": "Trang thiết bị",
     "heading1": "Kart &",
-    "heading2": "Trang bị",
+    "heading2": "Trang thiết bị",
     "sub": "Chúng tôi tập trên kart đua thực thụ, không phải kart cho thuê. Hiệu năng, sự ổn định và khả năng kiểm soát đúng chuẩn thi đấu.",
     "slideAlt": "Kart đua CS55",
-    "prev": "Kart trước",
-    "next": "Kart sau",
+    "prev": "Xe kart phía trước",
+    "next": "Xe kart tiếp theo",
     "powered": "Trang bị động cơ",
     "logoAlt": "Vortex Engines",
     "category": "Trang bị Kart",
     "title": "CS55 Racing",
-    "desc": "Kart đua hiệu năng cao dành cho tay đua trưởng thành tập luyện ở cấp độ thi đấu."
+    "desc": "Xe đua kart hiệu suất cao, thiết kế riêng cho lộ trình tập luyện chuyên nghiệp."
   },
   "team": {
     "label": "Đội ngũ huấn luyện",
-    "heading1": "Đội ngũ Phát triển",
+    "heading1": "Đội ngũ Phát triển",
     "heading2": "Tay đua",
     "sub": "Các huấn luyện viên tập trung vào kỹ năng đua, kỷ luật và chuẩn bị cho tay đua bước vào thi đấu.",
     "davidRole": "HLV Trưởng · Chương trình tiếng Anh",
@@ -102,8 +102,8 @@
   },
   "drivers": {
     "heading1": "Tay đua",
-    "heading2": "Của Chúng Tôi",
-    "maxiRole": "Tay đua Học viện",
+    "heading2": "Của Chúng Tôi",
+    "maxiRole": "Tay đua Câu lạc bộ",
     "maxiName": "Maxie Jumar",
     "maxiCountry": "🇻🇳 Việt Nam",
     "noelRole": "Tay đua Junior",
@@ -116,7 +116,7 @@
     "heading2": "Bài Bản",
     "step1Title": "Họp trước",
     "step1Desc": "Tổng quan đường đua và mục tiêu rõ ràng cho buổi tập.",
-    "step2Title": "Thời gian trên đường",
+    "step2Title": "Thời gian trên đường đua",
     "step2Desc": "Các lượt chạy có kiểm soát với bài tập trọng tâm — line, phanh, thoát cua.",
     "step3Title": "Phân tích",
     "step3Desc": "Phân tích video và dữ liệu kèm phản hồi cho từng người.",
@@ -124,15 +124,15 @@
     "step4Desc": "Áp dụng chỉnh sửa ngay lập tức và xây dựng sự ổn định.",
     "trainingAt": "Tập luyện tại",
     "location": "Trường đua Đại Nam",
-    "quote": "\"Tay đua không giỏi lên nhờ chạy nhiều vòng hơn — mà nhờ hiểu rõ từng vòng chạy.\""
+    "quote": "\"Chạy nhiều không bằng hiểu sâu.\""
   },
   "gear": {
-    "label": "Trang bị bắt buộc",
+    "label": "Bảo hộ bắt buộc",
     "heading1": "Karting Là",
-    "heading2": "Môn Thể Thao Tốc Độ",
+    "heading2": "Môn Thể Thao Tốc Độ",
     "sub": "Trang bị đúng chuẩn là bắt buộc. An toàn là điều không thể thỏa hiệp.",
     "previewAlt": "Xem trang bị",
-    "helmet": "Mũ bảo hiểm kín",
+    "helmet": "Mũ bảo hiểm Full-face",
     "suit": "Bộ đồ đua",
     "gloves": "Găng tay",
     "shoes": "Giày đua",
@@ -144,8 +144,8 @@
     "label": "Đăng ký",
     "heading1": "Đăng ký vào",
     "heading2a": "Tay đua",
-    "heading2b": "Học viện",
-    "sub": "Cho chúng tôi biết đôi chút về tay đua, chúng tôi sẽ liên hệ để trao đổi các bước tiếp theo.",
+    "heading2b": "Câu lạc bộ",
+    "sub": "Hãy chia sẻ đôi chút về bản thân, chúng tôi sẽ sớm liên hệ để tư vấn lộ trình tiếp theo cho bạn.",
     "groupDriver": "Thông tin tay đua",
     "driverNameLabel": "Tên tay đua *",
     "driverNamePh": "Họ và tên",
@@ -181,6 +181,6 @@
     "address": "18 đường số 2, Khu nhà ở Vạn Phúc 1, Phường Hiệp Bình, Thành phố Hồ Chí Minh, Việt Nam",
     "emailLabel": "Email",
     "phoneLabel": "Điện thoại",
-    "copy": "© 2026 Học viện Đua xe Racehub. Bảo lưu mọi quyền."
+    "copy": "© 2026 Câu lạc bộ Đua xe Racehub. Bảo lưu mọi quyền."
   }
 }

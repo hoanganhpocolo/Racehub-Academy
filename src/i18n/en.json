@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Racehub Driver's Academy",
+    "title": "Racehub Driver's Club",
     "description": "Structured karting training in Vietnam — racecraft, coaching, and a real pathway from first laps to competitive racing."
   },
   "nav": {
@@ -14,10 +14,10 @@
     "menu": "Menu"
   },
   "hero": {
-    "label": "Racehub Driver's Academy",
+    "label": "Racehub Driver's Club",
     "line1": "From First Laps",
     "line2": "To The Starting Grid",
-    "applyBtn": "Apply For The Academy",
+    "applyBtn": "Apply For The Club",
     "viewPrograms": "View Programs",
     "imgAlt": "Kart Racing"
   },
@@ -103,10 +103,10 @@
   "drivers": {
     "heading1": "Our",
     "heading2": "Drivers",
-    "maxiRole": "Academy Driver",
+    "maxiRole": "Club Driver",
     "maxiName": "Maxie Jumar",
     "maxiCountry": "🇻🇳 Vietnam",
-    "noelRole": "Academy Junior",
+    "noelRole": "Club Junior",
     "noelName": "Emmanuel Mariano",
     "noelCountry": "🇵🇭 Philippines"
   },
@@ -144,7 +144,7 @@
     "label": "Apply",
     "heading1": "Apply For The",
     "heading2a": "Driver's",
-    "heading2b": "Academy",
+    "heading2b": "Club",
     "sub": "Tell us a bit about the driver, and we'll get in touch to discuss the next steps.",
     "groupDriver": "Driver Information",
     "driverNameLabel": "Driver Name *",
@@ -181,6 +181,6 @@
     "address": "18 Street No. 2, Van Phuc 1 Residential Area, Hiep Binh Ward, Ho Chi Minh City, Vietnam",
     "emailLabel": "Email",
     "phoneLabel": "Phone",
-    "copy": "© 2026 Racehub Driver's Academy. All rights reserved."
+    "copy": "© 2026 Racehub Driver's Club. All rights reserved."
   }
 }
